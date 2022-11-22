@@ -1,29 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
+{% block style %}
+{% include "style.html" %}
 <style>
-    td {
+    li {
+        display: inline-block;
         border: 2px solid #090;
+        padding: 10px;
         text-align: center;
     }
 </style>
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<header>
-    <a href="/">Домой</a> / <a href = /items>Список товаров</a>
-</header>
+{% block content %}
 <h2>Список товаров</h2>
-<table>
-    <tr>
+<ol>
     {% for item in items %}
-        <td>
-            <a href="/item/{{ item.id }}"><b>{{ item.name }}</b><br>{{ item.info }} </a>
+        <li>
+            <a href="{% url 'item-detail' item.id %}">
+                <div><b>{{ item.name }}</b></div>
+                <div>{{ item.info }}</div>
+            </a>
+        </li>
     {% endfor %}
-    </tr>
-</table>
-</body>
-</html>
+</ol>
+{% endblock %}
