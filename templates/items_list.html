@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<style>
+    td {
+        border: 2px solid #090;
+        text-align: center;
+    }
+</style>
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -9,11 +17,13 @@
     <a href="/">Домой</a> / <a href = /items>Список товаров</a>
 </header>
 <h2>Список товаров</h2>
-<ol>
+<table>
+    <tr>
     {% for item in items %}
-        <a href="/item/{{ item.id }}">
-            <li>{{ item.name }}</li>
-        </a>
+        <td>
+            <a href="/item/{{ item.id }}"><b>{{ item.name }}</b><br>{{ item.info }} </a>
     {% endfor %}
+    </tr>
+</table>
 </body>
 </html>
