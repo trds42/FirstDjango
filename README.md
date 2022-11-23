@@ -3,7 +3,7 @@
 
 # Инструкция по запуску
 
-1. `python -v venv <venv_name>` 
+1. `python -m venv <venv_name>` 
 Создаем виртуальное окружение
 2. `source venv_name/bin/activate`
 Активируем виртуальное окружение
